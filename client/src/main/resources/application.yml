@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: client
+
+server:
+  port: 9002
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+  instance:
+    hostname: localhost
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+security:
+  oauth2:
+    client:
+      client-id: web_app
+      client-secret: secret
+
